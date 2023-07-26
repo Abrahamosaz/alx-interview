@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+"""
+pascal triangle algorithm
+"""
 def pascal_triangle(n):
     if n <= 0:
         return []
