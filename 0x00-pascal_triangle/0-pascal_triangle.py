@@ -1,7 +1,9 @@
-def pascal_triangle(num):
+def pascal_triangle(n):
+    if n <= 0:
+        return []
     pascal_triangle_list = []
     # Iterating through rows
-    for n in range(0, num):
+    for n in range(0, n):
         inner_list = []
         # iterating through each value of the row
         for k in range(0, n + 1):
