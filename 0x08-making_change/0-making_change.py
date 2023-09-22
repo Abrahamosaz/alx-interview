@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-from typing import List
 """
 makeChange interview question task
 """
+from typing import List
+
 
 def makeChange(coins: List[int], total: int) -> int:
     """
@@ -23,21 +24,8 @@ def makeChange(coins: List[int], total: int) -> int:
             rem -= coin * times
         if rem == 0:
             break
-    
+
     if total > result:
         return -1
-    
+
     return coin_count
-    
-
-            
-
-
-
-
-
-
-
-
-
-
