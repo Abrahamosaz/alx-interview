@@ -2,19 +2,16 @@
 """
 2d matrix rotate interview task
 """
+from typing import List
 
 
-def rotate_2d_matrix(matrix):
-    """
-    function to rotate 2d matrix
-    """
-    n = len(matrix)
-    
-    # Step 1: Transpose the matrix in-place
-    for i in range(n):
-        for j in range(i, n):
-            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+def rotate_2d_matrix(matrix: List[List[int]]) -> None:
+    matrix_len = len(matrix)
 
-    # Step 2: Reverse each row of the transposed matrix (in-place)
-    for i in range(n):
+    # first transpose the matrix
+    for i in range(matrix_len):
+        for j in range(i, matrix_len):
+            matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
+
+    for i in range(matrix_len):
         matrix[i] = list(reversed(matrix[i]))
