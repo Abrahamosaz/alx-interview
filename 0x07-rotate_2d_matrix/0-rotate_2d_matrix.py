@@ -5,7 +5,7 @@
 from typing import List
 
 
-def rotate_2d_matrix(matrix: List[List[int]]) -> None:
+def rotate_2d_matrix(matrix: List) -> None:
     matrix_len = len(matrix)
 
     # first transpose the matrix
