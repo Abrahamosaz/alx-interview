@@ -1,27 +1,24 @@
 #!/usr/bin/python3
 """
-pascal triangle algorithm
+A function that returns a list of lists of integers representing the Pascal's triangle of n
 """
+
 def pascal_triangle(n):
+    """
+    Returns a list of Integers representing
+    the Pascal's triangle
+    """
+    mylist = [[1]]
+
     if n <= 0:
-        return []
-    pascal_triangle_list = []
-    # Iterating through rows
-    for n in range(0, n):
-        inner_list = []
-        # iterating through each value of the row
-        for k in range(0, n + 1):
-            inner_list.append(factFormula(n, k))
-        pascal_triangle_list.append(inner_list)
-    return pascal_triangle_list
-
-#function to find factorial
-def findFact(i):
-    if i == 1 or i == 0:
-        return 1
-    else:
-        return i*findFact(i-1)
-
-# function for the Combination formula
-def factFormula(n, k):
-    return int(findFact(n)/(findFact(n-k)*findFact(k)))
+        return mylist
+    #for i in mylist:
+    #    mylist.append([])
+    #    mylist[i].append(1)
+    for i in range(n - 1):
+        tmp =  [0] + mylist[-1] + [0]
+        row = []
+        for j in range(len(mylist[-1]) + 1):
+            row.append(tmp[j] + tmp[j + 1])
+        mylist.append(row)
+    return mylist
