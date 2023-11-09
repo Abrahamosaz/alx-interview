@@ -1,16 +1,24 @@
 #!/usr/bin/python3
-"""
-island_perimeter interview task
-"""
-from typing import List, Sequence
+"""Island perimeter task"""
 
 
-def  island_perimeter(grid: List[Sequence]) -> int:
-    result = 0
-    row_len = len(grid)
-    for i in range(row_len):
-        col_len = len(i)
-        for j in range(col_len):
-            if grid[i][j] == 1:
-                result += 1
+def island_perimeter(grid):
+    """Gets the perimeter og a cell in a grid"""
+    perimeter = 0
+    rows = len(grid)
+    cols = len(grid[0])
 
+    for row in range(rows):
+        for col in range(cols):
+            if grid[row][col] == 1:
+                neighbors = 4
+                if row > 0 and grid[row - 1][col] == 1:
+                    neighbors -= 1
+                if row < rows - 1 and grid[row + 1][col] == 1:
+                    neighbors -= 1
+                if col > 0 and grid[row][col - 1] == 1:
+                    neighbors -= 1
+                if col < cols - 1 and grid[row][col + 1] == 1:
+                    neighbors -= 1
+                perimeter += neighbors
+    return perimeter

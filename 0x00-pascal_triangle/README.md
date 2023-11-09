@@ -1,1 +1,1 @@
-pascal triangle
+pascal triangle interview question
